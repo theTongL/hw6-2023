@@ -22,6 +22,7 @@ video.loop = false;
 play.addEventListener("click", function() {
 	console.log("Play Video");
 	video.play();
+	console.log("The current volume is " + video.volume + "%");
 });
 
 pause.addEventListener("click", function() {
@@ -55,17 +56,20 @@ skip.addEventListener("click", function() {
 mute.addEventListener("click", function() {
 	if (video.muted) {
 		video.muted = false;
+		mute.innerHTML = "Mute";
 		console.log("Unmute");
 	}
 	else {
 		video.muted = true;
+		mute.innerHTML = "Unmute";
 		console.log("Mute");
 	}
 });
 
 slider.addEventListener("change", function() {
 	video.volume = this.value / 100;
-	console.log("The current volume is " + video.volume * 100 + "%");
+	volume.innerHTML = this.value + "%";
+	console.log("The current volume is " + video.volume + "%");
 });
 
 old.addEventListener("click", function() {
