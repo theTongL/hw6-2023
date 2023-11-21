@@ -14,6 +14,7 @@ let faster = document.querySelector("#faster");
 let skip = document.querySelector("#skip");
 let mute = document.querySelector("#mute");
 let slider = document.querySelector("#slider");
+let volume = document.querySelector("#volume");
 let old = document.querySelector("#vintage");
 let original = document.querySelector("#orig");
 video.autoplay = false;
@@ -22,7 +23,7 @@ video.loop = false;
 play.addEventListener("click", function() {
 	console.log("Play Video");
 	video.play();
-	console.log("The current volume is " + video.volume + "%");
+	volume.innerHTML = slider.value + "%";
 });
 
 pause.addEventListener("click", function() {
